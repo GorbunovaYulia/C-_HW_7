@@ -1,5 +1,6 @@
 ﻿/*
-49. Двумерный массив. Найдите элементы к оторых оба индекса четные и замените эти элементы на их квадраты.
+51. Двумерный массив. Найдите элементы к оторых оба индекса четные и замените эти элементы на их квадраты.
++ Сумма элементов главной диагонали.
 */
 
 int GetDataFromUser(string message)
@@ -23,7 +24,7 @@ int[,] get2intArray(int colLength, int rowLength, int start, int finish)
     {
         for (int j = 0; j < rowLength; j++)
         {
-            array[i, j] = new Random().Next(start, finish+1);
+            array[i, j] = new Random().Next(start, finish + 1);
         }
     }
     return array;
@@ -50,19 +51,39 @@ void print2DArray(int[,] array)
 
 int[,] findChetnue(int[,] array)
 {
-    for (int i = 2; i < array.GetLength(0); i=i+2)
+    for (int i = 2; i < array.GetLength(0); i = i + 2)
     {
-        for(int j = 2; j < array.GetLength(1); j=j+2)
+        for (int j = 2; j < array.GetLength(1); j = j + 2)
         {
-            array[i, j] =  array[i, j]* array[i, j];
+            array[i, j] = array[i, j] * array[i, j];
         }
     }
     return array;
+}
+
+int findSum(int[,] array)
+{
+    int result = 0;
+    for (int i = 0; i < array.GetLength(0); i = i + 2)
+    {
+        for (int j = 0; j < array.GetLength(1); j = j + 2)
+        {
+            if (i == j)
+            {
+                result = result + array[i, j];
+            }
+        }
+    }
+    return result;
 }
 
 int n = GetDataFromUser("Введите количество строк");
 int m = GetDataFromUser("Введите количество столбцов");
 int[,] array = get2intArray(n, m, 0, 100);
 print2DArray(array);
-int[,] newarray=findChetnue(array);
+int[,] newarray = findChetnue(array);
 print2DArray(newarray);
+int sum = findSum(newarray);
+Console.ForegroundColor = ConsoleColor.Magenta;
+Console.WriteLine(sum);
+Console.ResetColor();
