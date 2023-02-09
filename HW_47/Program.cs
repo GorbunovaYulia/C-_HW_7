@@ -29,7 +29,7 @@ double[,] get2DoubleArray(int colLength, int rowLength, int start, int finish)
     {
         for (int j = 0; j < rowLength; j++)
         {
-            array[i, j] = Math.Round(new Random().Next(start, finish + 1)+new Random().NextDouble(),2);
+            array[i, j] = Math.Round(new Random().Next(start, finish + 1) + new Random().NextDouble(), 2);
         }
     }
     return array;

@@ -12,7 +12,7 @@ int GetDataFromUser(string message)
 
 void printInColor(string data)
 {
-    Console.ForegroundColor = ConsoleColor.Magenta;
+    Console.ForegroundColor = ConsoleColor.Green;
     Console.Write(data);
     Console.ResetColor();
 }
@@ -43,7 +43,14 @@ void print2DArray(int[,] array)
         printInColor(i + "\t");
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write(array[i, j] + "\t");
+            if (i == j)
+            {
+                printInColor(array[i, j] + "\t");
+            }
+            else
+            {
+                Console.Write(array[i, j] + "\t");
+            }
         }
         Console.WriteLine();
     }
