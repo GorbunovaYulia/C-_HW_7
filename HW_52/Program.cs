@@ -73,8 +73,8 @@ string findSredArif(int[,] array)
 }
 int n = GetDataFromUser("Введите количество строк");
 int m = GetDataFromUser("Введите количество столбцов");
-int start = GetDataFromUser("Введите нижний диапазон вещественных чисел");
-int finish = GetDataFromUser("Введите верхний диапазон вещественных чисел");
+int start = GetDataFromUser("Введите нижний диапазон чисел");
+int finish = GetDataFromUser("Введите верхний диапазон чисел");
 int[,] array = get2intArray(n, m, start, finish);
 print2DArray(array);
 string result = findSredArif(array);

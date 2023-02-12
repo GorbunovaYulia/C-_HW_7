@@ -75,8 +75,8 @@ int findNumber(int[,] array, int n, int m)
 }
 int n = GetDataFromUser("Введите номер строки");
 int m = GetDataFromUser("Введите номер столбца");
-int start = GetDataFromUser("Введите нижний диапазон вещественных чисел");
-int finish = GetDataFromUser("Введите верхний диапазон вещественных чисел");
+int start = GetDataFromUser("Введите нижний диапазон чисел");
+int finish = GetDataFromUser("Введите верхний диапазон чисел");
 int[,] array = get2intArray(start, finish);
 print2DArray(array);
 int result = findNumber(array, n, m);
